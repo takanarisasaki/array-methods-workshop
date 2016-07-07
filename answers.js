@@ -55,12 +55,12 @@ console.log("Question 4:");
 
 function longestWord(inputString) {
     var arrayOfWords = inputString.split(" ");
-    var longestWordOfString = arrayOfWords.reduce(function(longest,currentWord) {
-        if (currentWord.length > longest.length) {
-            return currentWord;
+    var longestWordOfString = arrayOfWords.reduce(function(initial,currentWord) {
+        if (currentWord.length > initial.length) {
+            return currentWord; //returns inside reduce in the variable initial
         }
         else {
-            return longest;
+            return initial;
         }
         
     }, ""); //Inside "" is the longest at the beginning
@@ -71,3 +71,20 @@ function longestWord(inputString) {
 console.log(longestWord("Hello I'm Takanari Bye"));
 
 
+//Q5: Find the number of vowels in a String
+console.log("Question 5:");
+function countVowels(inputString) {
+    var splitString = inputString.split("");
+    var checkVowels = splitString.reduce(function(numVowels, currentLetter) {
+        if (currentLetter === "a" || currentLetter === "e" || 
+            currentLetter === "i" || currentLetter === "o" || 
+            currentLetter === "u") {
+                numVowels += 1;
+        } 
+        return numVowels;
+        
+    }, 0);
+    return checkVowels;
+}
+
+console.log(countVowels("Hello im takanari"));
