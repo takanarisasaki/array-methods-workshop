@@ -30,3 +30,8 @@ function getPositives(inputArrayNum) {
 
 var numArray2 = [2,5,7,-1,-2,5,-2,0];
 console.log(getPositives(numArray2));
+
+
+//Q2B: Printing numbers from filtered array
+console.log("Question 2B:");
+return numArray2.filter(isPositive2).forEach(isPositive);
