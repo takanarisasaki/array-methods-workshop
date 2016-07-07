@@ -90,7 +90,7 @@ function countVowels(inputString) {
 console.log(countVowels("Hello im takanari"));
 
 
-//Question 6: Find highest and lowerest number using reduce function and store them in an object
+//Q6: Find highest and lowerest number using reduce function and store them in an object
 console.log("Question 6");
 function highLow(inputArrayNum) {
     var highestAndLowestNum = inputArrayNum.reduce(function(initialNumObj, num) {
@@ -108,3 +108,36 @@ function highLow(inputArrayNum) {
 
 
 console.log(highLow([1, -10, 20, 40, 5]));
+
+
+//Q7: Finding Highest/Lowest and Second Highest/Lowest using reduce function
+console.log("Question 7:");
+
+function highLowTwo(inputArrayNum) {
+    var twoHighestLowestNum = inputArrayNum.reduce(function(initialNumObj, currentNum) {
+        if (currentNum > initialNumObj.highest) {
+            initialNumObj.secondHighest = initialNumObj.highest;
+            initialNumObj.highest = currentNum;
+        }
+        if (currentNum > initialNumObj.secondHighest && currentNum < initialNumObj.highest) {
+            initialNumObj.secondHighest = currentNum;
+        }
+        if (currentNum < initialNumObj.lowest) {
+            initialNumObj.secondLowest = initialNumObj.lowest;
+            initialNumObj.lowest = currentNum;
+        }
+        if (currentNum < initialNumObj.secondLowest && currentNum > initialNumObj.lowest) {
+            initialNumObj.secondLowest = currentNum;
+        }
+        return initialNumObj;
+    }, {
+        highest: -Infinity, 
+        secondHighest: -Infinity, 
+        lowest: Infinity, 
+        secondLowest: Infinity
+        
+    });
+    return twoHighestLowestNum;
+}
+
+console.log(highLowTwo([1, -10, 20, 40, 5]));
