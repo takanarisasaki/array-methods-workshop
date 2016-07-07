@@ -88,3 +88,23 @@ function countVowels(inputString) {
 }
 
 console.log(countVowels("Hello im takanari"));
+
+
+//Question 6: Find highest and lowerest number using reduce function and store them in an object
+console.log("Question 6");
+function highLow(inputArrayNum) {
+    var highestAndLowestNum = inputArrayNum.reduce(function(initialNumObj, num) {
+        if (num > initialNumObj.highestNum) {
+            initialNumObj.highestNum = num;
+        }
+        if (num < initialNumObj.lowestNum) {
+            initialNumObj.lowestNum = num;
+        }
+        return initialNumObj;
+    },{highestNum: -Infinity, lowestNum: Infinity});
+    
+    return highestAndLowestNum;
+}
+
+
+console.log(highLow([1, -10, 20, 40, 5]));
