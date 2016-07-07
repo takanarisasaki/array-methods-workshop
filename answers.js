@@ -43,20 +43,9 @@ function posNum(inputNumArray) {
 posNum(numArray2);
 
 
-/*
+
 //Q3: Filtering truthy values
-function filter(inputArray) {
-    var filteredArray = inputArray.filter()
-    return filteredArray;
+function filterArray(inputArray, filteringFunction) {
+     return inputArray.filter(filteringFunction);
 }
 
-function filterArray(inputArray, inputFunction) {
-    var filteredArray = inputArray.filter(inputFunction);
-    return filteredArray;
-}
-
-var typeArray = [true, false, null, undefined, "","hello", 0, 1, 10];
-console.log(filterArray(typeArray, filter));
-
-
-*/
