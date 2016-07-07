@@ -49,3 +49,25 @@ function filterArray(inputArray, filteringFunction) {
      return inputArray.filter(filteringFunction);
 }
 
+
+//Q4: Find longest word using reduce function
+console.log("Question 4:");
+
+function longestWord(inputString) {
+    var arrayOfWords = inputString.split(" ");
+    var longestWordOfString = arrayOfWords.reduce(function(longest,currentWord) {
+        if (currentWord.length > longest.length) {
+            return currentWord;
+        }
+        else {
+            return longest;
+        }
+        
+    }, ""); //Inside "" is the longest at the beginning
+    
+        return longestWordOfString;
+}
+
+console.log(longestWord("Hello I'm Takanari Bye"));
+
+
