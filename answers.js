@@ -1,4 +1,5 @@
 //Q1: Print positive numbers using forEach
+console.log("Question 1");
 function isPositive(num) {
     if (num > 0) {
         console.log(num);
@@ -14,6 +15,7 @@ var positiveNumArray = printPositives(numArray);
 
 
 //Question 2: Positive numbers using filter method
+console.log("Question 2");
 function isPositive2(num) {
     if (num > 0) {
         return true;
@@ -34,4 +36,27 @@ console.log(getPositives(numArray2));
 
 //Q2B: Printing numbers from filtered array
 console.log("Question 2B:");
-return numArray2.filter(isPositive2).forEach(isPositive);
+function posNum(inputNumArray) {
+    inputNumArray.filter(isPositive2).forEach(isPositive);
+}
+
+posNum(numArray2);
+
+
+/*
+//Q3: Filtering truthy values
+function filter(inputArray) {
+    var filteredArray = inputArray.filter()
+    return filteredArray;
+}
+
+function filterArray(inputArray, inputFunction) {
+    var filteredArray = inputArray.filter(inputFunction);
+    return filteredArray;
+}
+
+var typeArray = [true, false, null, undefined, "","hello", 0, 1, 10];
+console.log(filterArray(typeArray, filter));
+
+
+*/
