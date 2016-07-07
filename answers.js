@@ -141,3 +141,33 @@ function highLowTwo(inputArrayNum) {
 }
 
 console.log(highLowTwo([1, -10, 20, 40, 5]));
+
+
+//Question 8: 
+console.log("Question 8:");
+function countChars(inputString) {
+    var arrayOfLetter = inputString.split("");
+    var numEachLetter = arrayOfLetter.reduce(function(objLetterNum, currentLetter) {
+        if (objLetterNum[currentLetter]) {
+            objLetterNum[currentLetter] += 1;
+        }
+        else {
+            objLetterNum[currentLetter] = 1;
+        }
+        return objLetterNum;
+        
+    }, {});
+    
+    return numEachLetter;
+}
+
+console.log(countChars("hello world"));
+
+/*
+var x = {};
+var name = 'hello'
+    If the property name does not exist in the object x, it creates name with its value
+x[name] = name;
+console.log(x);
+*/
+
