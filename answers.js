@@ -171,3 +171,43 @@ x[name] = name;
 console.log(x);
 */
 
+//Question 9: Object that contains ID objects
+console.log("Question 9:");
+
+function peopleById(inputArrayOfPeople) {
+    var idObject = inputArrayOfPeople.reduce(function(objectOfPeople, currentObject) {
+        objectOfPeople[currentObject.id] = {
+
+        "firstName": currentObject.firstName,
+        "lastName": currentObject.lastName,
+        "email": currentObject.email
+        }
+        return objectOfPeople;
+    }, {});
+    return idObject;
+}
+
+var identity = [
+  {
+    "id": "KeXoYg92is",
+    "firstName": "John",
+    "lastName": "Smith",
+    "email": "john@smith.com"
+  },
+  {
+    "id": "NkALmSWtUp",
+    "firstName": "Donald",
+    "lastName": "Duck",
+    "email": "don@disney.com"
+  },
+  {
+    "id": "m7LPbJYSUg",
+    "firstName": "John",
+    "lastName": "Vader",
+    "email": "vader@darkside.com"
+  }
+];
+
+console.log(peopleById(identity));
+
+
